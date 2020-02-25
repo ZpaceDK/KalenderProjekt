@@ -9,7 +9,11 @@ void setup() {
 void draw() {  
   // Farver 
   background(222, 222, 222);
-
+  
+  stroke(1);
+  tint(255);
+  rectMode(CORNER);
+  
   fill(170, 170, 170);
   rect(0, 0, 1600, 100);
   rect(0, 100, 200, 600);
@@ -52,7 +56,27 @@ void draw() {
   String time = String.valueOf(hour);
   String minut = String.valueOf(minute);
   String sekund = String.valueOf(second);
-
+  
+  // Markør til piletast
+  rectMode(CENTER);
+  fill(200,40,20);
+  noStroke();
+  rect(x+100, y, 195, 95);
+  
+  // Kanter / Borders til Markøren
+  if(y>=695){
+    y = y-100;
+  }
+  if(y<=105){
+    y = y+100;
+  }
+  if(x>=1595){
+    x = x-200;
+  }
+  if(x<=105){
+    x = x+200;
+  }
+  
   textSize(20);
   fill(0);
   textAlign(LEFT);
@@ -77,6 +101,4 @@ void draw() {
   textAlign(CENTER);
   text("Søndag", 1500, 60);
   
-  // cirkel til piletast
-  ellipse(x, y, 30, 30);
 }
